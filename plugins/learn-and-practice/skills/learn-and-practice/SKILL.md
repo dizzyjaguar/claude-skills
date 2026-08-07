@@ -104,13 +104,11 @@ up rather than read goes below the phases. Keep this order:
 7. **Reference** — everything consulted rather than read, under one heading that
    says so: the spec as tables (data shapes with their rules, and the interface
    or endpoints with expected outcomes — behaviour belongs to you, the
-   implementation does not); a table of what you scaffolded, plus the gotchas
-   that will confuse them in the first ten minutes and any command that fails
-   until they create their first file; and a graduated list of ways to ask for
-   help, ranked by how much each costs them, from "review my phase" through
-   "just show me this one".
+   implementation does not); a table of what you scaffolded; and a graduated
+   list of ways to ask for help, ranked by how much each costs them, from
+   "review my phase" through "just show me this one".
 
-Two structural moves that make a guide teach rather than instruct:
+Three moves that make a guide teach rather than instruct:
 
 - **Make it work, then make it right.** Have an early phase build something
   crude and deliberately unstructured, and a later phase refactor it. Feeling
@@ -118,6 +116,16 @@ Two structural moves that make a guide teach rather than instruct:
   well-factored from step one teaches architecture as trivia.
 - **Order by dependency, not by tidiness.** Each phase should leave something
   that runs.
+- **Let them hit it.** Errors they will meet in their own code stay out of the
+  guide. A resolution error they diagnose themselves sticks; a warning they
+  skimmed past does not. The one exception is a command that fails because your
+  scaffolding is still empty — say so, or they will reasonably conclude you
+  handed them a broken setup and go debugging yours instead of writing theirs.
+
+This is where the **traps** from the spike differ from toolchain friction, and
+the line is worth holding. A trap is a design mistake with a silent failure mode
+they could ship without noticing; it earns a step. A gotcha is loud, immediate,
+and searchable; it earns nothing.
 
 **Done when** every step has a Done when they could verify alone, and no step
 contains code.
