@@ -1,7 +1,8 @@
 # 🌵 claude-skills
 
-Claude Code skills by [Eli Zevin](https://github.com/dizzyjaguar). One plugin
-each, so you take only what you want.
+Claude Code skills by [Eli Zevin](https://www.linkedin.com/in/eli-zevin/)
+([@dizzyjaguar](https://github.com/dizzyjaguar)). One plugin each, so you take
+only what you want.
 
 | Skill | |
 | --- | --- |
