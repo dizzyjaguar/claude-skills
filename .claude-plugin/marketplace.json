@@ -1,0 +1,28 @@
+{
+  "name": "dizzyjaguar",
+  "owner": {
+    "name": "Eli Zevin",
+    "url": "https://github.com/dizzyjaguar"
+  },
+  "description": "Claude Code skills by Eli Zevin. Each skill is its own plugin, so you install only the ones you want.",
+  "plugins": [
+    {
+      "name": "learn-and-practice",
+      "source": "./plugins/learn-and-practice",
+      "description": "Turn a topic you want to learn into a project you build by hand. Claude scaffolds the inert setup and writes a phased build guide containing no code, then reviews your work phase by phase.",
+      "author": {
+        "name": "Eli Zevin"
+      },
+      "category": "productivity",
+      "keywords": [
+        "learning",
+        "practice",
+        "teaching",
+        "interview-prep",
+        "scaffolding",
+        "code-review"
+      ],
+      "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/learn-and-practice"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "learn-and-practice",
+  "description": "Turn a topic you want to learn into a project you build by hand. Claude scaffolds the inert setup and writes a phased build guide containing no code, then reviews your work phase by phase.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Eli Zevin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/learn-and-practice",
+  "keywords": [
+    "learning",
+    "practice",
+    "teaching",
+    "interview-prep",
+    "scaffolding",
+    "code-review"
+  ]
+}
