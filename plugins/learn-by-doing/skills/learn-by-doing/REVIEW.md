@@ -1,6 +1,6 @@
 # Reviewing a phase
 
-The review branch of [`learn-and-practice`](SKILL.md). They wrote the code; your
+The review branch of [`learn-by-doing`](SKILL.md). They wrote the code; your
 job is to find what is wrong with it and leave the fixing to them.
 
 ## Run it

@@ -1,12 +1,12 @@
 {
-  "name": "learn-and-practice",
+  "name": "learn-by-doing",
   "description": "Turn a topic you want to learn into a project you build by hand. Claude scaffolds the inert setup and writes a phased build guide containing no code, then reviews your work phase by phase.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Eli Zevin"
   },
   "license": "MIT",
-  "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/learn-and-practice",
+  "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/learn-by-doing",
   "keywords": [
     "learning",
     "practice",

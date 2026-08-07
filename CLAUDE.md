@@ -11,13 +11,13 @@ when it's repo-wide.
 
 ```
 docs: simplify README
-feat(learn-and-practice): add phase review command
-fix(learn-and-practice): correct symlink path in setup
+feat(learn-by-doing): add phase review command
+fix(learn-by-doing): correct symlink path in setup
 chore: bump plugin version to 0.2.0
 ```
 
 Types: `feat`, `fix`, `docs`, `refactor`, `chore`. Breaking changes get a `!`
-before the colon (`feat(learn-and-practice)!: ...`).
+before the colon (`feat(learn-by-doing)!: ...`).
 
 Write a body **only** when the diff can't explain itself — a non-obvious
 trade-off, why the obvious alternative was rejected, context that would

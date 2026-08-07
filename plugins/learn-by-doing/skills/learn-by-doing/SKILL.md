@@ -1,10 +1,10 @@
 ---
-name: learn-and-practice
+name: learn-by-doing
 description: Scaffold a hands-on practice project and write a phased build guide with no code in it, then review the work as it lands.
 disable-model-invocation: true
 ---
 
-# learn-and-practice
+# learn-by-doing
 
 Turn a topic the user wants to learn into a project they build by hand. You
 write the spec, the reasoning, and the verification steps. They write every line

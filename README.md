@@ -6,27 +6,27 @@ only what you want.
 
 | Skill | |
 | --- | --- |
-| [`learn-and-practice`](./plugins/learn-and-practice) | Do you miss the ol' days when learning meant doin'? |
+| [`learn-by-doing`](./plugins/learn-by-doing) | Do you miss the ol' days when learning meant doin'? |
 
 ## Install
 
 ```
 /plugin marketplace add dizzyjaguar/claude-skills
-/plugin install learn-and-practice@dizzyjaguar
+/plugin install learn-by-doing@dizzyjaguar
 ```
 
 Updating: `/plugin marketplace update dizzyjaguar`, then reinstall.
 
-## 🌵 learn-and-practice
+## 🌵 learn-by-doing
 
 You name a topic. It sets up the boring parts — manifests, config, deps, empty
 folders — and hands you a phased build guide with **zero code in it**. You write
 every line. It reviews each phase when you're done.
 
 ```
-/learn-and-practice postgres query optimization
-/learn-and-practice                       # asks what you want to learn
-/learn-and-practice review phase 3        # once you've built something
+/learn-by-doing postgres query optimization
+/learn-by-doing                       # asks what you want to learn
+/learn-by-doing review phase 3        # once you've built something
 ```
 
 Two things keep the guides honest:
@@ -47,8 +47,8 @@ Skip the plugin machinery — symlink your checkout and edits go live next sessi
 
 ```sh
 git clone https://github.com/dizzyjaguar/claude-skills.git
-ln -s "$PWD/claude-skills/plugins/learn-and-practice/skills/learn-and-practice" \
-      ~/.claude/skills/learn-and-practice
+ln -s "$PWD/claude-skills/plugins/learn-by-doing/skills/learn-by-doing" \
+      ~/.claude/skills/learn-by-doing
 ```
 
 Do this *instead of* `/plugin install` — running both leaves two copies arguing
