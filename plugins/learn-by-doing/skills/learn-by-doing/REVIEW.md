@@ -45,7 +45,7 @@ the change and say what you changed and why, so the edit still teaches.
 
 ## Close the phase with the question
 
-Every reviewed phase ends by asking that phase's **Explain cold** question and
+Every reviewed phase ends by asking that phase's **End of Phase Question** and
 waiting. Do not answer it yourself, do not bundle it into the findings, and do
 not move on before they have tried. A phase that runs green but cannot be
 explained is not learned, and this is the cheapest place in the whole project to

@@ -88,7 +88,7 @@ reference, and they open these docs to do the next step, not to read them.
 | `README.md` | Overview, the progress checklist linking into the phases, how a step works, how a phase review works and the refactor suggestions that close it, the scaffolding table, the help ladder |
 | `PHASES.md` | The work — every phase and step, then stretch goals |
 | `SPECS.md` | What they are building: data shapes with their rules, the interface or endpoints with expected outcomes, error cases |
-| `RECALL.md` | The questions to answer cold |
+| `RECALL.md` | The questions to answer from memory, guide closed |
 
 Behaviour belongs in `SPECS.md`; the implementation of it does not. Verify every
 cross-file link and anchor resolves before handing the guide over.
@@ -115,9 +115,11 @@ otherwise walk straight past, and leave the deciding to them.
 Point at traps obliquely here too — *"watch what happens to keys whose value is
 undefined when you merge"* says where to look without saying what they will find.
 
-Close each phase with one or two **Explain cold** questions on what it taught.
-These drive the conversation at review time, so make them answerable in a
-sentence or two rather than essay prompts.
+Close each phase with one or two questions on what it taught, under a heading
+that spells out what it is and which phase it belongs to — **End of Phase 3
+Question**, pluralised when there are two. These drive the conversation at
+review time, so make them answerable in a sentence or two rather than essay
+prompts.
 
 Two more things the guide carries:
 
