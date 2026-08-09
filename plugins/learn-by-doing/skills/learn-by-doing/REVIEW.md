@@ -68,22 +68,32 @@ the phase sticks:
 - When their answer is right but for the wrong reason, that is the interesting
   case — go after the reason.
 
-## Offer a refactor pass
+## Give the refactor pass
 
-Only once the phase is genuinely complete: every **Done when** passes, nothing
-is left in the Broken tier, and the closing question has been talked through. A
-refactor offered over broken code competes with the work they still have.
+Every completed phase gets one. This is not an offer they can wave off — a
+learner who has just got something working is the worst-placed person in the
+room to judge whether they need to see it done better, and the gap between
+*it works* and *this is what good looks like* is most of what separates them
+from the engineer they are practising to be.
 
-Ask in one line whether they want suggestions on how their solution could be
-refactored, then stop and wait. If they pass, tick the phase and move on — do
-not ask twice, and do not smuggle the suggestions into the findings instead.
+Run it only once the phase is genuinely complete: every **Done when** passes,
+nothing is left in the Broken tier, and the End of Phase Question has been
+talked through. A refactor over broken code competes with the work they still
+have.
 
-Hold the offer entirely when a later phase already refactors this code. The
-guide's make-it-work-then-make-it-right arc is deliberate, and pre-empting it
-spends the phase where feeling the pain is what teaches the structure. Say that
-is why you are holding it, so it reads as deferred rather than forgotten.
+**The question always comes first, and never in the same breath as the
+refactor.** Show them a tidier version of their code and they will answer the
+question about that version instead of the one they actually wrote and reasoned
+their way to. The question is measuring their thinking, so it has to land while
+their thinking is still the only thing in the room.
 
-### When they say yes
+When a later phase is built to refactor this same code, the pass still happens —
+but keep it off that ground. Say which improvement is coming and that they will
+make it themselves, then spend the pass on what that phase will not touch. The
+guide's make-it-work-then-make-it-right arc only teaches if they feel the pain
+first; handing them the tidy version early spends the phase for nothing.
+
+### What to look for
 
 This is the one place in a review where writing code is the point — the
 suggestion *is* the code. Read their phase the way a staff engineer reads a
@@ -119,5 +129,47 @@ How to deliver it:
   and some are one defensible taste over another. Knowing the difference is the
   seniority; declaring everything an improvement is not.
 
-Then tick the phase in the guide's Progress checklist and point at the next
-phase by name — not its contents.
+## Write the phase up in `LESSONS.md`
+
+As soon as the refactor pass is delivered, append that phase's entry. Do it
+automatically — do not ask, do not offer, and do not wait to be reminded. The
+conversation you just had is the most valuable thing the phase produced and the
+only part of it that disappears when the terminal closes.
+
+One entry per phase, appended in order, earlier entries never rewritten. Each
+one holds:
+
+- **The End of Phase Question**, as asked.
+- **Where their answer landed** — what they said, and the correction if there
+  was one. Record the wrong first answer and how it moved. An entry that
+  flatters them is worthless as a study aid, and the wrong turn is usually the
+  part they will need again.
+- **The refactor you suggested and why.** The reason in full; the code only
+  where the smallest before/after carries the point. Never paste the whole file.
+
+Write it in their words wherever their words were right. This is a record of
+their reasoning with your corrections folded in, not a transcript of your
+explanations — if the entry reads as your voice throughout, they will not
+recognise it as theirs when they come back to it.
+
+Keep each entry to something re-readable in two minutes before the next session.
+It is the natural warm-up before `RECALL.md` and it only works at that length.
+
+## Mark the phase done
+
+Do not leave this implied in the conversation — **edit the guide**. The
+conversation scrolls away; the guide is what they open tomorrow, and a guide
+that still shows every phase unstarted is worse than no tracker at all.
+
+Two files, both of them, every time:
+
+- **`README.md`** — tick that phase's box in the Progress checklist.
+- **`PHASES.md`** — mark the phase heading itself done, so someone reading the
+  work top to bottom can see where they are without going back to the README.
+
+Then point at the next phase by name — not its contents. Naming what comes next
+is momentum; describing it starts the next phase early and robs them of reading
+it themselves.
+
+The guide is the one file in the project you are allowed to edit without asking.
+It is yours — the rule about their code staying theirs is about their code.

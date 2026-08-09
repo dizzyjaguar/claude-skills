@@ -40,8 +40,9 @@ Two things keep the guides honest:
 Every step has a **Build**, a **Why**, and a **Done when** you can actually run.
 When you get stuck, hints narrow the search — they don't end it. Reviews point at
 the problem and stop there. You find the fix. Once a phase is green and you've
-explained it back, it offers a refactor pass — how a senior engineer would
-tighten what you wrote, and why.
+explained it back, you get a refactor pass — how a senior engineer would tighten
+what you wrote, and why — and the whole exchange lands in `LESSONS.md` to reread
+before the next session.
 
 ## Hacking on these
 

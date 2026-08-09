@@ -85,13 +85,26 @@ reference, and they open these docs to do the next step, not to read them.
 
 | File | Holds |
 | --- | --- |
-| `README.md` | Overview, the progress checklist linking into the phases, how a step works, how a phase review works and the refactor suggestions that close it, the scaffolding table, the help ladder |
+| `README.md` | Overview, the progress checklist linking into the phases, how a step works, what closing a phase involves — question, refactor pass, write-up — the scaffolding table, the help ladder |
 | `PHASES.md` | The work — every phase and step, then stretch goals |
 | `SPECS.md` | What they are building: data shapes with their rules, the interface or endpoints with expected outcomes, error cases |
 | `RECALL.md` | The questions to answer from memory, guide closed |
+| `LESSONS.md` | Empty at handover — reviews append one entry per phase as they finish |
 
 Behaviour belongs in `SPECS.md`; the implementation of it does not. Verify every
 cross-file link and anchor resolves before handing the guide over.
+
+Give progress somewhere to be recorded in both files: an unticked box per phase
+in the `README.md` checklist, and a status marker on every phase heading in
+`PHASES.md`. Reviews update both, so they have to exist from the start — and
+pick one marker convention and hold it, since a guide with three ways of saying
+*done* stops being scannable.
+
+`LESSONS.md` ships as a title and one line saying what will fill it. Reviews
+write the rest — see [`REVIEW.md`](REVIEW.md). Write no entries yourself and
+leave no per-phase placeholders: a file of empty stubs invites filling them in
+for the sake of it, and this one is only worth anything if every line in it
+came out of a conversation that actually happened.
 
 Each step in `PHASES.md` has four parts:
 
