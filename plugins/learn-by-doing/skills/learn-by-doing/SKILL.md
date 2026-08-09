@@ -80,33 +80,52 @@ supposed to write.
 
 ## Step 4 — Write the guide
 
-Put it at `<project>/README.md`. **Work at the top, reference at the bottom** —
-they open this file to do the next step, not to read it, so anything they look
-up rather than read goes below the phases. Keep this order:
+Split it across files from the start. One long README buries the work under the
+reference, and they open these docs to do the next step, not to read them.
 
-1. **Header** — three or four lines. What the guide is, that they write all the
-   code, what the step format means, and a link down to the reference section.
-2. **Progress** — the phase checklist, each item linking to its phase heading.
-   First thing they see, so the map and the way in are the same element.
-3. **Phases**, numbered, each holding numbered steps in the shape:
-   - **Build** — what to make. One concern per step.
-   - **Why** — the reason it matters, and the trade-off if there is one. This is
-     where the guide earns its keep; a step without a Why is a chore.
-   - **Done when** — an observable check they can run without asking you.
-     Prefer a command with an expected result over a description.
+| File | Holds |
+| --- | --- |
+| `README.md` | Overview, the progress checklist linking into the phases, how a step works, how a phase review works, the scaffolding table, the help ladder |
+| `PHASES.md` | The work — every phase and step, then stretch goals |
+| `SPECS.md` | What they are building: data shapes with their rules, the interface or endpoints with expected outcomes, error cases |
+| `RECALL.md` | The questions to answer cold |
 
-   Close each phase with one or two **Explain cold** questions on what it taught.
-4. **Traps** — from the spike, written as ordinary steps inside whichever phase
-   they belong to. Describe the wrong behaviour and how to detect it; leave the
-   fix to them. These are the steps that pay for the whole guide.
-5. **Stretch goals** — ordered by value against their stated goal.
-6. **Questions to answer cold** — the recall list for the whole project.
-7. **Reference** — everything consulted rather than read, under one heading that
-   says so: the spec as tables (data shapes with their rules, and the interface
-   or endpoints with expected outcomes — behaviour belongs to you, the
-   implementation does not); a table of what you scaffolded; and a graduated
-   list of ways to ask for help, ranked by how much each costs them, from
-   "review my phase" through "just show me this one".
+Behaviour belongs in `SPECS.md`; the implementation of it does not. Verify every
+cross-file link and anchor resolves before handing the guide over.
+
+Each step in `PHASES.md` has four parts:
+
+- **Build** — what to make. One concern per step.
+- **Why** — the reason it matters, and the trade-off if there is one. This is
+  where the guide earns its keep; a step without a Why is a chore.
+- **Done when** — an observable check they can run without asking you. Prefer a
+  command with an expected result over a description.
+- **Break it down** — a collapsed `<details>` toggle holding four to six
+  bullets. This is the rung between the step and the answer, and it is the whole
+  reason a help request need not become a code snippet.
+
+Get the breakdown bullets right; they carry the skill. A good bullet is
+**checkable but not copyable**. Name a sub-task, or name a decision they would
+otherwise walk straight past, and leave the deciding to them.
+
+- *"Decide whether an unset variable and an empty one deserve the same outcome"*
+  is a breakdown bullet: it reveals that a decision exists, then stops.
+- *"Return the default when the value is undefined"* is the answer in disguise.
+
+Point at traps obliquely here too — *"watch what happens to keys whose value is
+undefined when you merge"* says where to look without saying what they will find.
+
+Close each phase with one or two **Explain cold** questions on what it taught.
+These drive the conversation at review time, so make them answerable in a
+sentence or two rather than essay prompts.
+
+Two more things the guide carries:
+
+- **Traps** from the spike, written as ordinary steps inside whichever phase
+  they belong to. Describe the wrong behaviour and how to detect it; leave the
+  fix to them. These are the steps that pay for the whole guide.
+- **Stretch goals** at the end of `PHASES.md`, ordered by value against their
+  stated goal. No breakdowns — by then they should be scoping steps themselves.
 
 Three moves that make a guide teach rather than instruct:
 
@@ -127,11 +146,31 @@ the line is worth holding. A trap is a design mistake with a silent failure mode
 they could ship without noticing; it earns a step. A gotcha is loud, immediate,
 and searchable; it earns nothing.
 
-**Done when** every step has a Done when they could verify alone, and no step
-contains code.
+**Done when** every step has a Done when they could verify alone, every step has
+a breakdown whose bullets stop short of the answer, and no step contains code.
+
+## When they ask for help mid-phase
+
+The most frequent thing you will do, and the easiest to get wrong. Start from
+that step's **Break it down** toggle and go exactly one rung finer than it
+already does. The toggle names the decision; you sharpen the one they are stuck
+on, you do not resolve it.
+
+- Name the concrete next move — a function to try in a REPL, a value to print,
+  a comparison to run, the page of the docs.
+- **Explain concepts in full.** When they ask why something behaves as it does,
+  answer properly; that costs them nothing and is the part worth having.
+- **Verify before you explain.** If the answer depends on how a library or
+  runtime actually behaves, run it and read the output rather than answering
+  from memory. Runtimes are full of surprises that sound wrong when described
+  and are obvious once observed.
+- **Write code only when they ask for it outright.** Then show it in the
+  conversation rather than writing it into their source, so the typing and the
+  commit stay theirs — and annotate the decisions inside it that they could
+  reasonably have made differently.
 
 ## Reviewing their work
 
 When they come back with a phase done, read [`REVIEW.md`](REVIEW.md) and follow
 it. That is a separate run with different rules — most importantly, rules about
-not fixing things for them.
+not fixing things for them, and about the conversation that closes each phase.
