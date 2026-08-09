@@ -85,7 +85,7 @@ reference, and they open these docs to do the next step, not to read them.
 
 | File | Holds |
 | --- | --- |
-| `README.md` | Overview, the progress checklist linking into the phases, how a step works, how a phase review works, the scaffolding table, the help ladder |
+| `README.md` | Overview, the progress checklist linking into the phases, how a step works, how a phase review works and the refactor suggestions that close it, the scaffolding table, the help ladder |
 | `PHASES.md` | The work — every phase and step, then stretch goals |
 | `SPECS.md` | What they are building: data shapes with their rules, the interface or endpoints with expected outcomes, error cases |
 | `RECALL.md` | The questions to answer cold |
