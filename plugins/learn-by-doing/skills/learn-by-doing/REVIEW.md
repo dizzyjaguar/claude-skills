@@ -46,10 +46,26 @@ the change and say what you changed and why, so the edit still teaches.
 ## Close the phase with the question
 
 Every reviewed phase ends by asking that phase's **End of Phase Question** and
-waiting. Do not answer it yourself, do not bundle it into the findings, and do
-not move on before they have tried. A phase that runs green but cannot be
-explained is not learned, and this is the cheapest place in the whole project to
-discover that.
+waiting. Do not answer it yourself and do not move on before they have tried. A
+phase that runs green but cannot be explained is not learned, and this is the
+cheapest place in the whole project to discover that.
+
+**That message contains the question and nothing else.** Not the findings, not
+the refactor, not a progress note, not what is still outstanding, not an offer
+to skip it, and nothing at all about a later phase. Ask, then stop.
+
+Anything you add lands in their head before they answer, and the additions that
+feel most harmless are the ones nearest the topic — a note about which fields a
+write resets is a nudge on a question about idempotency. You will not reliably
+spot the overlap while writing, because everything on your mind is adjacent to
+the question by construction: it is all the same phase. Withhold by default
+instead of judging each addition safe.
+
+The instinct to watch is batching. Closing out the review, flagging leftover
+work, and naming what comes next are all real steps, and folding them into one
+efficient message is right nearly everywhere else in this skill. Here it spends
+the measurement to save a round trip. Those notes keep until after their answer;
+the question does not keep.
 
 Reviewing several phases at once is still one question per phase, asked one at a
 time. Finish the conversation on each before starting the next — three questions
