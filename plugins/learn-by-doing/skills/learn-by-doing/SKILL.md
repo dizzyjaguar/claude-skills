@@ -90,9 +90,21 @@ reference, and they open these docs to do the next step, not to read them.
 | `SPECS.md` | What they are building: data shapes with their rules, the interface or endpoints with expected outcomes, error cases |
 | `RECALL.md` | The questions to answer from memory, guide closed |
 | `LESSONS.md` | Empty at handover — reviews append one entry per phase as they finish |
+| `CLAUDE.md` | The few rules that have to hold even when no skill is loaded |
 
 Behaviour belongs in `SPECS.md`; the implementation of it does not. Verify every
 cross-file link and anchor resolves before handing the guide over.
+
+`CLAUDE.md` is the one file here that does not wait to be opened — it loads on
+its own every session, which is exactly what the others cannot do. Both of these
+skills are invoked rather than automatic, so a session can easily run a whole
+phase review with none of their rules in context, working from whatever the
+`README.md` happens to summarise. Keep `CLAUDE.md` to the handful of rules that
+do real damage when missed: the user writes every line of source, their code is
+not edited unless they ask for it, and a finished phase goes through the
+`review-phase` skill rather than an improvised review. Link the guide for
+everything else. It is not a second copy of the guide and it starts rotting the
+moment it tries to be.
 
 Give progress somewhere to be recorded in both files: an unticked box per phase
 in the `README.md` checklist, and a status marker on every phase heading in
@@ -101,7 +113,7 @@ pick one marker convention and hold it, since a guide with three ways of saying
 *done* stops being scannable.
 
 `LESSONS.md` ships as a title and one line saying what will fill it. Reviews
-write the rest — see [`REVIEW.md`](REVIEW.md). Write no entries yourself and
+write the rest — see the `review-phase` skill. Write no entries yourself and
 leave no per-phase placeholders: a file of empty stubs invites filling them in
 for the sake of it, and this one is only worth anything if every line in it
 came out of a conversation that actually happened.
@@ -186,6 +198,10 @@ on, you do not resolve it.
 
 ## Reviewing their work
 
-When they come back with a phase done, read [`REVIEW.md`](REVIEW.md) and follow
-it. That is a separate run with different rules — most importantly, rules about
-not fixing things for them, and about the conversation that closes each phase.
+When they come back with a phase done, that is the `review-phase` skill, not
+this one. It is a separate run with different rules — most importantly, rules
+about scope, about not fixing things for them, and about the conversation that
+closes each phase. Invoke it rather than reviewing from memory: this skill is
+manually invoked, so a session that never loaded it has none of those rules in
+context, and a review run without them looks convincing and skips the parts that
+teach.

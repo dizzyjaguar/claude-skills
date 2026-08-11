@@ -1,7 +1,20 @@
+---
+name: review-phase
+description: Review a finished phase or step of a learn-by-doing practice project — run its Done when checks against the running code, report findings without fixing them, ask the End of Phase Question, give a refactor pass, and write the phase up. Use whenever the user says they have finished a phase, or asks to review or check a phase, a step, or a numbered section of a guided practice project they are building by hand.
+---
+
 # Reviewing a phase
 
-The review branch of [`learn-by-doing`](SKILL.md). They wrote the code; your
-job is to find what is wrong with it and leave the fixing to them.
+The review branch of the `learn-by-doing` skill, which scaffolds these projects
+and writes their guides. They wrote the code; your job is to find what is wrong
+with it and leave the fixing to them.
+
+The project carries the review's inputs: `PHASES.md` holds the phases, their
+steps, their **Done when** checks and their **End of Phase Question**;
+`SPECS.md` holds the behaviour to review against; `README.md` holds the progress
+checklist; `LESSONS.md` takes the write-up. Read the phase in `PHASES.md` before
+running anything — reviewing against a remembered spec is how a phase gets
+marked done with a step still missing.
 
 ## Run it
 
@@ -14,6 +27,27 @@ Check the phase is actually finished before reviewing it. A skipped step is
 worth more than a style note.
 
 **Done when** every criterion in the phase has been executed, not inferred.
+
+### Review what they asked about, not what you noticed
+
+"Check my 3.2" scopes the review to 3.2 — its criteria, its ground. A whole
+phase is in scope only when they name the phase.
+
+Something wrong outside that scope still gets reported, in one line: the file,
+the line, and that it is worth a look when they reach it. No demonstration, no
+failing output, no walk through the mechanism. They asked a narrow question, and
+a finding that arrives with a full workup buries the answer to it.
+
+**Never run a later step's Done when.** The guide sequences its discoveries
+deliberately, and some steps exist so they can walk into a specific trap and
+recognise the shape of it afterwards. Running that check and pasting the before
+and after spends the step — nothing is left to find, and reading about a trap
+teaches a fraction of what falling into one does. Where the guide says something
+is worth reproducing, that is a reservation, not a hint for you.
+
+The tell is a finding you are pleased with: the urge to prove it against a
+running server is the right instinct inside scope and the wrong one outside it,
+where the proof is the damage.
 
 ## Review against the spec
 

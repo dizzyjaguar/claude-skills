@@ -6,7 +6,8 @@ only what you want.
 
 | Skill | |
 | --- | --- |
-| [`learn-by-doing`](./plugins/learn-by-doing) | Do you miss the ol' days when learning meant doin'? |
+| 🛠️ [`learn-by-doing`](./plugins/learn-by-doing) | Do you miss the ol' days when learning meant doin'? |
+| 📖 [`review-phase`](./plugins/learn-by-doing/skills/review-phase) | Marks your homework. Ships inside `learn-by-doing` |
 
 ## Install
 
@@ -17,7 +18,7 @@ only what you want.
 
 Updating: `/plugin marketplace update dizzyjaguar`, then reinstall.
 
-## 🌵 learn-by-doing
+## 🛠️ learn-by-doing
 
 You name a topic. It sets up the boring parts — manifests, config, deps, empty
 folders — and hands you a phased build guide with **zero code in it**. You write
@@ -26,7 +27,6 @@ every line. It reviews each phase when you're done.
 ```
 /learn-by-doing postgres query optimization
 /learn-by-doing                       # asks what you want to learn
-/learn-by-doing review phase 3        # once you've built something
 ```
 
 Two things keep the guides honest:
@@ -38,11 +38,29 @@ Two things keep the guides honest:
   it up. Feeling the pain is the point.
 
 Every step has a **Build**, a **Why**, and a **Done when** you can actually run.
-When you get stuck, hints narrow the search — they don't end it. Reviews point at
-the problem and stop there. You find the fix. Once a phase is green and you've
-explained it back, you get a refactor pass — how a senior engineer would tighten
-what you wrote, and why — and the whole exchange lands in `LESSONS.md` to reread
-before the next session.
+When you get stuck, hints narrow the search — they don't end it.
+
+## 📖 review-phase
+
+The other half. Tell it you've finished something and it takes over:
+
+```
+review my phase 3
+check my 3.2          # one step works too
+```
+
+It runs that phase's **Done when** checks against your actual running code
+rather than reading it and guessing, sorts what it finds into broken, risky and
+taste, then points at the file and line and stops. You find the fix — that's the
+exercise.
+
+Then it asks you that phase's question, cold, and waits. Answering badly is the
+useful part: the wrong first answer goes into `LESSONS.md` next to where it
+eventually landed, because that's the bit worth rereading. After that you get a
+refactor pass — how a senior engineer would tighten what you wrote, and why.
+
+Auto-invokes, so you don't have to remember it exists. It ships inside the
+`learn-by-doing` plugin; installing that gets you both.
 
 ## Hacking on these
 
@@ -50,20 +68,28 @@ Skip the plugin machinery — symlink your checkout and edits go live next sessi
 
 ```sh
 git clone https://github.com/dizzyjaguar/claude-skills.git
-ln -s "$PWD/claude-skills/plugins/learn-by-doing/skills/learn-by-doing" \
-      ~/.claude/skills/learn-by-doing
+for s in learn-by-doing review-phase; do
+  ln -s "$PWD/claude-skills/plugins/learn-by-doing/skills/$s" ~/.claude/skills/$s
+done
 ```
+
+One symlink per skill, not per plugin — a plugin holding two skills needs both.
 
 Do this *instead of* `/plugin install` — running both leaves two copies arguing
 over which one is live.
 
-To ship: commit, bump `version` in the skill's `.claude-plugin/plugin.json`, push.
+To ship: commit, bump `version` in the plugin's `.claude-plugin/plugin.json`, push.
 
-**Adding a skill?** Three files:
+**Adding a skill?** If it stands alone, it's a plugin of its own — three files:
 
 1. `plugins/<name>/skills/<name>/SKILL.md`
 2. `plugins/<name>/.claude-plugin/plugin.json` — `name`, `description`, `version`
 3. an entry in `.claude-plugin/marketplace.json` pointing at `./plugins/<name>`
+
+If it's useless without an existing one — the way `review-phase` needs the guide
+that `learn-by-doing` writes — drop it in beside that plugin's skill as
+`plugins/<plugin>/skills/<name>/SKILL.md` and bump the version. No second
+manifest, and no way to install half of a pair that only works whole.
 
 ## License
 

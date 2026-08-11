@@ -1,7 +1,7 @@
 {
   "name": "learn-by-doing",
   "description": "Turn a topic you want to learn into a project you build by hand. Claude scaffolds the inert setup and writes a phased build guide containing no code, then reviews your work phase by phase.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": {
     "name": "Eli Zevin"
   },
