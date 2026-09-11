@@ -1,0 +1,18 @@
+{
+  "name": "orchestrate",
+  "description": "Run one Linear ticket, or the next ready ticket under a parent, through a fresh agent per ticket. The agent leaves changes in the working tree and reports files changed, tests run and one commit line per repo; you commit.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Eli Zevin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/orchestrate",
+  "keywords": [
+    "linear",
+    "tickets",
+    "subagents",
+    "orchestration",
+    "workflow",
+    "git"
+  ]
+}

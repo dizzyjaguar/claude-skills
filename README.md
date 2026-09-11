@@ -8,12 +8,14 @@ only what you want.
 | --- | --- |
 | 🛠️ [`learn-by-doing`](./plugins/learn-by-doing) | Do you miss the ol' days when learning meant doin'? |
 | 📖 [`review-phase`](./plugins/learn-by-doing/skills/review-phase) | Marks your homework. Ships inside `learn-by-doing` |
+| 🎯 [`orchestrate`](./plugins/orchestrate) | One ticket, one fresh agent, you commit |
 
 ## Install
 
 ```
 /plugin marketplace add dizzyjaguar/claude-skills
 /plugin install learn-by-doing@dizzyjaguar
+/plugin install orchestrate@dizzyjaguar
 ```
 
 Updating: `/plugin marketplace update dizzyjaguar`, then reinstall.
@@ -62,6 +64,29 @@ refactor pass — how a senior engineer would tighten what you wrote, and why.
 Auto-invokes, so you don't have to remember it exists. It ships inside the
 `learn-by-doing` plugin; installing that gets you both.
 
+## 🎯 orchestrate
+
+Point it at a Linear ticket, or at a parent ticket, and it runs one ticket
+through a fresh agent:
+
+```
+/orchestrate ENG-38      # this ticket
+/orchestrate ENG-37      # the next ready ticket under this parent
+```
+
+A fresh agent per ticket keeps context small: the agent gets the ticket body,
+the repos' `CLAUDE.md` files and the branch name, nothing else. Under a parent
+it skips Done, Canceled and anything still blocked, and says which ticket it
+picked and why.
+
+The agent never touches git. It leaves the changes in the working tree and
+reports files changed per repo, the test commands it ran, open questions, and
+one Conventional Commits line per repo. You commit, then run it again for the
+next ticket. It refuses to start if the last ticket is still uncommitted.
+
+Needs the Linear MCP server, and a workspace `CLAUDE.md` that maps ticket labels
+to repo folders and names the test commands.
+
 ## Hacking on these
 
 Skip the plugin machinery — symlink your checkout and edits go live next session:
@@ -71,6 +96,7 @@ git clone https://github.com/dizzyjaguar/claude-skills.git
 for s in learn-by-doing review-phase; do
   ln -s "$PWD/claude-skills/plugins/learn-by-doing/skills/$s" ~/.claude/skills/$s
 done
+ln -s "$PWD/claude-skills/plugins/orchestrate/skills/orchestrate" ~/.claude/skills/orchestrate
 ```
 
 One symlink per skill, not per plugin — a plugin holding two skills needs both.

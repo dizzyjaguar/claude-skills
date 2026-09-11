@@ -23,6 +23,24 @@
         "code-review"
       ],
       "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/learn-by-doing"
+    },
+    {
+      "name": "orchestrate",
+      "source": "./plugins/orchestrate",
+      "description": "Run one Linear ticket, or the next ready ticket under a parent, through a fresh agent per ticket. The agent leaves changes in the working tree and reports files changed, tests run and one commit line per repo; you commit.",
+      "author": {
+        "name": "Eli Zevin"
+      },
+      "category": "productivity",
+      "keywords": [
+        "linear",
+        "tickets",
+        "subagents",
+        "orchestration",
+        "workflow",
+        "git"
+      ],
+      "homepage": "https://github.com/dizzyjaguar/claude-skills/tree/main/plugins/orchestrate"
     }
   ]
 }
